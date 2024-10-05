@@ -1,0 +1,40 @@
+package media;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S. Rodrigues
+ * 
+ */
+public class Media {
+    
+    public static void main(String[] args) {
+       Scanner teclado = new Scanner(System.in);
+       
+       System.out.println(" Digite o primeiro valor: ");
+       float n1 = teclado.nextFloat();
+       
+       System.out.println(" Digite o primeiro valor: ");
+       float n2 = teclado.nextFloat();
+        
+       System.out.println(" Digite o primeiro valor: ");
+       float n3 = teclado.nextFloat();
+       
+       System.out.println(" Digite o primeiro valor: ");
+       float n4 = teclado.nextFloat();
+    
+    float media = ( n1 + n2 + n3 + n4 ) / 4;
+     System.out.println(" A média dos valors é: " + media);
+     
+     // Criando uma condição if (se)
+     
+     if (media >= 6) {
+     System.out.println("Parabéns você foi aprovado!!!");
+     } 
+     else if ( media >= 4 && media < 6){
+         System.out.println("Precisa estudar mais, está de recuperação");
+     }else {
+         System.out.println("Nao foi dessa vez, esta REPROVADO!!!");         
+     }
+    
+    }
+}
