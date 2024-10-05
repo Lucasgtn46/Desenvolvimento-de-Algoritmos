@@ -1,0 +1,29 @@
+//Exercicio 1 - Faça o código a seguir em java e transforme a saída de terminal para gráfica.
+
+package retangulo;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+    public class Retangulo {
+
+    public static void main(String[] args) {
+      
+    double ladoA, ladoB, perim, area;
+
+    ladoA = Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o valor de um lado: "));
+    
+    ladoB = Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o valor de outro lado: "));
+    
+    perim = 2*ladoA + 2*ladoB;
+    
+    JOptionPane.showInputDialog(null,"Digite o valor de um lado: " + perim + "cm");
+
+     area = ladoA * ladoB; 
+    JOptionPane.showInputDialog(null,"A área do retangulo é: " + area + "cm²");     
+
+    }
+    
+}
