@@ -1,0 +1,29 @@
+package cilindro_ex1;
+import java.util.Scanner;
+import java.lang.Math;
+
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Cilindro_Ex1 {
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double h, r, a = 0, v = 0;
+
+        System.out.println("Digite a altura do cilindro: ");
+        h = sc.nextDouble();
+
+        System.out.println("Agora, digite o raio da base: ");
+        r = sc.nextDouble();
+
+        a = ((2) * (3.1416) * (r)) * (h * r);
+
+        v = ((3.1416) * (r * r)) * h;
+
+        System.out.println("O Volume do cilindro é: " + v + "\nA area do cilindro é: " + a + " cm²");
+     
+    }
+    
+}
