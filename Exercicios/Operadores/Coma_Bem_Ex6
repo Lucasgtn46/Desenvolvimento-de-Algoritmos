@@ -1,0 +1,28 @@
+package coma_bem;
+
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+import java.util.Scanner;
+
+public class Coma_Bem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Leitura do valor gasto pelo cliente
+        System.out.print("Digite o valor do gasto no restaurante ComaBem: ");
+        double gasto = sc.nextDouble();
+
+        // Cálculo dos 10% para o garçom
+        double taxaGarcom = gasto * 0.10;
+
+        // Cálculo do valor total a ser pago
+        double totalAPagar = gasto + taxaGarcom;
+
+        // Impressão do resultado
+        System.out.printf("O valor total a ser pago, incluindo 10%% para o garçom, é: R$ %.2f%n", totalAPagar);
+
+        sc.close(); // Fechar o scanner
+    }
+}
