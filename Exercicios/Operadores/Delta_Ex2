@@ -1,0 +1,43 @@
+package equação_delta;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Lucas S. Rodrigues
+ */
+public class EquacaoDelta {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o primeiro numero (a): ");
+        double a = sc.nextDouble();
+
+        System.out.println("Digite o segundo numero (b): ");
+        double b = sc.nextDouble();
+
+        System.out.println("Digite o terceiro numero (c): ");
+        double c = sc.nextDouble();
+
+        double delta = Math.pow(b, 2) - (4 * a * c);
+
+        
+        if (delta < 0) {
+            System.out.println("Esta equação não possui raízes reais.");
+        } else {
+            double raiz = Math.pow(delta, 0.5);
+
+            if (delta == 0) {
+                double x1 = (-b) / (2 * a);
+                System.out.println("A raiz desta equação é X: " + x1);
+            } else {
+                double x1 = (-b + raiz) / (2 * a);
+                double x2 = (-b - raiz) / (2 * a);
+                System.out.println("As raízes da equação são:");
+                System.out.println("Raiz 1: " + x1);
+                System.out.println("Raiz 2: " + x2);
+            }
+        }
+
+        sc.close(); 
+    }
+}
