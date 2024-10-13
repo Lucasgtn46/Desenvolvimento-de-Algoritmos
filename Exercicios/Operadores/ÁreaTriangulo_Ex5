@@ -1,0 +1,29 @@
+package area_triangulo;
+
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+import java.util.Scanner;
+
+public class Area_Triangulo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Digite o valor da base do triângulo: ");
+        double base = sc.nextDouble();
+
+        
+        System.out.print("Digite o valor da altura do triângulo: ");
+        double altura = sc.nextDouble();
+
+        
+        double area = (base * altura) / 2;
+
+   
+        System.out.printf("A área do triângulo é: %.2f%n", area);
+
+        sc.close(); 
+    }
+}
