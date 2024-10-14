@@ -1,0 +1,31 @@
+package horas_extras;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Horas_Extras {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        double valorHoraExtra = 30.00;
+        double totalAPagar;
+
+        System.out.print("Digite o dia da semana em que as horas extras foram trabalhadas (1 - Domingo, 2 - Segunda, ..., 7 - Sábado): ");
+        int diaSemana = scanner.nextInt();
+        
+        System.out.print("Digite a quantidade de horas extras trabalhadas: ");
+        int horasExtras = scanner.nextInt();
+
+        if (diaSemana == 1 || diaSemana == 7) { 
+            totalAPagar = horasExtras * valorHoraExtra * 1.5; 
+        } else { 
+            totalAPagar = horasExtras * valorHoraExtra;
+        }
+
+        System.out.printf("Valor total a ser pago ao funcionário: R$ %.2f%n", totalAPagar);
+        
+        scanner.close();
+    }
+}
