@@ -1,0 +1,35 @@
+package nota_frequencia;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Nota_Frequencia {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        double m, f;
+       
+        System.out.print("Digite a média: ");
+        m = sc.nextDouble();
+
+        
+        System.out.print("Digite o percentual de frequência: ");
+        f = sc.nextDouble();
+                
+        if (f < 75) {
+            System.out.println("Reprovado por falta");
+        } 
+       
+        else if (m < 6) {
+            System.out.println("Reprovado por nota");
+        } 
+        
+        else {
+            System.out.println("Aprovado");
+        }
+
+        sc.close(); 
+    }
+}
