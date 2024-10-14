@@ -1,0 +1,36 @@
+package raizes;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Raizes {
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+        
+        double a, b, c, delta, raiz1, raiz2;
+
+        System.out.print("Digite o coeficiente a: ");
+        a = scanner.nextDouble();
+        System.out.print("Digite o coeficiente b: ");
+        b = scanner.nextDouble();
+        System.out.print("Digite o coeficiente c: ");
+        c = scanner.nextDouble();
+
+        delta = (b * b) - (4 * a * c);
+        
+        if (delta > 0) {
+       
+            raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+            raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+        
+            System.out.printf("As raízes da equação são: R1 = %.2f e R2 = %.2f%n", raiz1, raiz2);
+        } else {
+            System.out.println("Não serão calculadas as raízes reais, pois delta é menor ou igual a zero.");
+        }
+        
+        scanner.close();
+    }
+}
