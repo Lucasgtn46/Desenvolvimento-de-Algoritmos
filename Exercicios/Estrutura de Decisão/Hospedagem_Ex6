@@ -1,0 +1,51 @@
+package hospedagem;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Hospedagem {
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+        
+        // Declaração das variáveis
+        char tipoDiaria;
+        int quantidadeDiarias;
+        double valorDiaria = 0.0;
+        double valorTotal;
+
+        // Solicita o tipo de diária
+        System.out.print("Digite o tipo da diária (S - Simples, D - Duplo, T - Triplo): ");
+        tipoDiaria = scanner.next().charAt(0);
+        
+        // Solicita a quantidade de diárias
+        System.out.print("Digite a quantidade de diárias desejadas: ");
+        quantidadeDiarias = scanner.nextInt();
+
+        // Calcula o valor da diária com base no tipo
+        if (tipoDiaria == 'S' || tipoDiaria == 's') {
+            valorDiaria = 255.50;
+        } else if (tipoDiaria == 'D' || tipoDiaria == 'd') {
+            valorDiaria = 305.50;
+        } else if (tipoDiaria == 'T' || tipoDiaria == 't') {
+            valorDiaria = 360.50;
+        } else {
+            // Tipo de diária inválido
+            System.out.println("Tipo de diária inválido.");
+            scanner.close();
+            return; // Encerra o programa
+        }
+
+        // Calcula o valor total
+        valorTotal = valorDiaria * quantidadeDiarias;
+
+        // Exibe o resultado
+        System.out.printf("O valor total a pagar é: R$ %.2f%n", valorTotal);
+        
+        // Fecha o scanner
+        scanner.close();
+    }
+}
+
