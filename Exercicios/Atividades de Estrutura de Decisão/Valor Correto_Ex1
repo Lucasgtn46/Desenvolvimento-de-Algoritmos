@@ -1,0 +1,25 @@
+package valor_correto;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas
+ */
+public class Valor_Correto {
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+               
+        System.out.print("Digite um número: ");
+        int numero = scanner.nextInt();
+               
+        if (numero >= 0 && numero <= 9) {
+            System.out.println("Valor correto.");
+        } else {
+            System.out.println("Valor incorreto.");
+        }
+        
+        
+        scanner.close();
+    }
+}
