@@ -1,0 +1,32 @@
+package nota_media;
+import java.util.Scanner;
+/**
+ *
+ * @author Familia
+ */
+public class Nota_Media {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        double n1, n2, m;
+        
+        System.out.print("Digite a nota 1: ");
+        n1 = sc.nextDouble();
+
+        System.out.print("Digite a nota 2: ");
+        n2 = sc.nextDouble();
+
+        // Cálculo da média
+        m = (n1 + n2) / 2;
+       
+        if (m >= 6) {
+            System.out.println("Aprovado");
+        } else {
+            System.out.println("Reprovado");
+        }
+
+        sc.close();
+    }
+}
