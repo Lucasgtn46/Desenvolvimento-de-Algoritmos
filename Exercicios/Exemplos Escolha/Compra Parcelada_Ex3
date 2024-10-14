@@ -1,0 +1,50 @@
+package compra_parcelada;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodigues
+ */
+public class Compra_Parcelada {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o valor total da compra: R$ ");
+        double valorCompra = scanner.nextDouble();
+        
+        System.out.print("Digite a quantidade de parcelas (2, 4, 6 ou 8): ");
+        int parcelas = scanner.nextInt();
+
+        double taxaJuros;
+        double valorParcela;
+
+        switch (parcelas) {
+            case 2:
+                taxaJuros = 0.03; // 3%
+                break;
+            case 4:
+                taxaJuros = 0.07; // 7%
+                break;
+            case 6:
+                taxaJuros = 0.09; // 9%
+                break;
+            case 8:
+                taxaJuros = 0.12; // 12%
+                break;
+            default:
+                System.out.println("Número de parcelas inválido. Por favor, escolha entre 2, 4, 6 ou 8.");
+                scanner.close();
+                return; // Sai do programa se a entrada for inválida
+        }
+
+        double totalAPagar = valorCompra * (1 + taxaJuros);
+        
+        valorParcela = totalAPagar / parcelas;
+
+        System.out.printf("Valor de cada parcela: R$ %.2f%n", valorParcela);
+        System.out.printf("Total a pagar: R$ %.2f%n", totalAPagar);
+        
+        scanner.close();
+    }
+}
+
