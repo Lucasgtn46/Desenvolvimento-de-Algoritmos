@@ -1,0 +1,26 @@
+package classeeleitoral;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class ClasseEleitoral {
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite a sua idade: ");
+        int idade = scanner.nextInt();
+        
+        if (idade < 16) {
+            System.out.println("Não-eleitor.");
+        } else if (idade >= 18 && idade <= 65) {
+            System.out.println("Eleitor obrigatório.");
+        } else {
+            System.out.println("Eleitor facultativo.");
+        }
+        
+        scanner.close();
+    }
+}
