@@ -1,0 +1,37 @@
+package com.mycompany.notas;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Notas {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite a primeira nota: ");
+        double nota1 = scanner.nextDouble();
+        
+        System.out.print("Digite a segunda nota: ");
+        double nota2 = scanner.nextDouble();
+        
+        System.out.print("Digite o tipo de média (A - Aritmética, P - Ponderada): ");
+        char tipoMedia = scanner.next().charAt(0);
+        
+        double media;
+
+        switch (tipoMedia) {
+            case 'A', 'a' -> {
+                media = (nota1 + nota2) / 2;
+                System.out.printf("A média aritmética é: %.2f%n", media);
+            }
+            case 'P', 'p' -> {
+                media = (nota1 * 3 + nota2 * 7) / (3 + 7);
+                System.out.printf("A média ponderada é: %.2f%n", media);
+            }
+            default -> System.out.println("Tipo de média inválido. Por favor, escolha 'A' ou 'P'.");
+        }
+        
+        scanner.close();
+    }
+}
