@@ -1,0 +1,30 @@
+package selecao;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Selecao {
+
+    public static void main(String[] args) {
+        // Inicialização do Scanner
+        Scanner scanner = new Scanner(System.in);
+        
+        double bolsa;
+        int tempoEstagio;
+
+        System.out.print("Digite o valor da bolsa (R$): ");
+        bolsa = scanner.nextDouble();
+        
+        System.out.print("Digite o tempo de estágio (em anos): ");
+        tempoEstagio = scanner.nextInt();
+
+        if (bolsa >= 750.00 && bolsa <= 950.00 && tempoEstagio >= 2) {
+            System.out.println("Participará do treinamento.");
+        } else {
+            System.out.println("Não participará.");
+        }
+        
+        scanner.close();
+    }
+}
