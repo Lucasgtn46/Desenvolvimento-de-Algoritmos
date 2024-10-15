@@ -1,0 +1,110 @@
+package com.mycompany.rodizio;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Rodizio {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite os quatro dígitos da placa do automóvel: ");
+        String placa = scanner.nextLine();
+
+        if (placa.length() < 4) {
+            System.out.println("Placa inválida. Por favor, insira quatro dígitos.");
+            scanner.close();
+            return;
+        }
+
+        char ultimoDigito = placa.charAt(placa.length() - 1);
+
+        String diaRodizio;
+        switch (ultimoDigito) {
+            case '1':
+            case '2':
+                diaRodizio = "segunda-feira";
+                break;
+            case '3':
+            case '4':
+                diaRodizio = "terça-feira";
+                break;
+            case '5':
+            case '6':
+                diaRodizio = "quarta-feira";
+                break;
+            case '7':
+            case '8':
+                diaRodizio = "quinta-feira";
+                break;
+            case '9':
+            case '0':
+                diaRodizio = "sexta-feira";
+                break;
+            default:
+                System.out.println("Último dígito inválido. Deve ser um número de 0 a 9.");
+                scanner.close();
+                return;
+        }
+
+        System.out.printf("Rodízio na %s%n", diaRodizio);
+        
+        scanner.close();
+    }
+}
+package com.mycompany.rodizio;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Rodizio {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite os quatro dígitos da placa do automóvel: ");
+        String placa = scanner.nextLine();
+
+        if (placa.length() < 4) {
+            System.out.println("Placa inválida. Por favor, insira quatro dígitos.");
+            scanner.close();
+            return;
+        }
+
+        char ultimoDigito = placa.charAt(placa.length() - 1);
+
+        String diaRodizio;
+        switch (ultimoDigito) {
+            case '1':
+            case '2':
+                diaRodizio = "segunda-feira";
+                break;
+            case '3':
+            case '4':
+                diaRodizio = "terça-feira";
+                break;
+            case '5':
+            case '6':
+                diaRodizio = "quarta-feira";
+                break;
+            case '7':
+            case '8':
+                diaRodizio = "quinta-feira";
+                break;
+            case '9':
+            case '0':
+                diaRodizio = "sexta-feira";
+                break;
+            default:
+                System.out.println("Último dígito inválido. Deve ser um número de 0 a 9.");
+                scanner.close();
+                return;
+        }
+
+        System.out.printf("Rodízio na %s%n", diaRodizio);
+        
+        scanner.close();
+    }
+}
