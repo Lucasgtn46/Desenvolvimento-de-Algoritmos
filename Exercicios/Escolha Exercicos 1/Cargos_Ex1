@@ -1,0 +1,65 @@
+package com.mycompany.cargo;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Cargo {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o código do cargo (1 - Escriturário, 2 - Secretário, 3 - Caixa, 4 - Gerente, 5 - Diretor): ");
+        int codigoCargo = scanner.nextInt();
+
+        System.out.print("Digite o salário atual: R$ ");
+        double salarioAtual = scanner.nextDouble();
+
+        String cargo;
+        double percentualAumento;
+        double aumento;
+        double novoSalario;
+
+        // Determina o cargo e o percentual de aumento
+        switch (codigoCargo) {
+            case 1 -> {
+                cargo = "Escriturário";
+                percentualAumento = 0.50; // 50%
+            }
+            case 2 -> {
+                cargo = "Secretário";
+                percentualAumento = 0.35; // 35%
+            }
+            case 3 -> {
+                cargo = "Caixa";
+                percentualAumento = 0.20; // 20%
+            }
+            case 4 -> {
+                cargo = "Gerente";
+                percentualAumento = 0.10; // 10%
+            }
+            case 5 -> {
+                cargo = "Diretor";
+                percentualAumento = 0.0; // Não tem aumento
+            }
+            default -> {
+                System.out.println("Código de cargo inválido.");
+                scanner.close();
+                return; // Sai do programa se a entrada for inválida
+            }
+        }
+
+        aumento = salarioAtual * percentualAumento;
+        novoSalario = salarioAtual + aumento;
+
+        System.out.printf("Cargo: %s%n", cargo);
+        System.out.printf("Valor do aumento: R$ %.2f%n", aumento);
+        if (codigoCargo == 5) {
+            System.out.println("Não há aumento para o cargo de Diretor.");
+        } else {
+            System.out.printf("Novo salário: R$ %.2f%n", novoSalario);
+        }
+
+        scanner.close();
+    }
+}
