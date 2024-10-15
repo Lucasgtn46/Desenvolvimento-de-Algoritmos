@@ -1,0 +1,61 @@
+package com.mycompany.viagem;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.rodrigues
+ */
+public class Viagem {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Selecione o destino:");
+        System.out.println("1 - Região Norte");
+        System.out.println("2 - Região Nordeste");
+        System.out.println("3 - Região Centro-Oeste");
+        System.out.println("4 - Região Sul");
+        
+        System.out.print("Digite o número do destino: ");
+        int destino = scanner.nextInt();
+
+        System.out.print("A viagem é ida e volta? (s/n): ");
+        char retorno = scanner.next().charAt(0);
+
+        double precoIda;
+        double precoIdaVolta;
+        
+        switch (destino) {
+            case 1:
+                precoIda = 500.00;
+                precoIdaVolta = 900.00;
+                break;
+            case 2:
+                precoIda = 350.00;
+                precoIdaVolta = 650.00;
+                break;
+            case 3:
+                precoIda = 350.00;
+                precoIdaVolta = 600.00;
+                break;
+            case 4:
+                precoIda = 600.00;
+                precoIdaVolta = 550.00;
+                break;
+            default:
+                System.out.println("Destino inválido.");
+                scanner.close();
+                return;
+        }
+
+        double precoFinal;
+        if (retorno == 's' || retorno == 'S') {
+            precoFinal = precoIdaVolta;
+        } else {
+            precoFinal = precoIda;
+        }
+
+        System.out.printf("O preço da passagem é: R$ %.2f%n", precoFinal);
+
+        scanner.close();
+    }
+}
