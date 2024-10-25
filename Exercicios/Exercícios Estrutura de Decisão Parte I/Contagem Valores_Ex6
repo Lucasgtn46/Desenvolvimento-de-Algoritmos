@@ -1,0 +1,47 @@
+package com.mycompany.contagem_valores;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Contagem_Valores {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int positivos = 0; // Contador de valores positivos
+        int negativos = 0; // Contador de valores negativos
+        double menor = Double.POSITIVE_INFINITY; // Inicializa o menor com um valor muito alto
+
+        System.out.println("Digite os valores reais (digite um valor 0 para finalizar):");
+
+        while (true) {
+            double valor = scanner.nextDouble();
+
+            if (valor == 0) {
+                break;
+            }
+
+            if (valor > 0) {
+                positivos++;
+            } else {
+                negativos++;
+            }
+
+            if (valor < menor) {
+                menor = valor;
+            }
+        }
+
+        System.out.println("Total de valores positivos: " + positivos);
+        System.out.println("Total de valores negativos: " + negativos);
+
+        if (menor != Double.POSITIVE_INFINITY) {
+            System.out.println("O menor valor digitado é: " + menor);
+        } else {
+            System.out.println("Nenhum valor válido foi digitado.");
+        }
+
+        scanner.close();
+    }
+}
