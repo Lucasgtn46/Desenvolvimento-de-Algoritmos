@@ -1,0 +1,34 @@
+package com.mycompany.mediavalores;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class MediaValores {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a quantidade de valores que serão processados: ");
+        int quantidade = scanner.nextInt();
+
+        if (quantidade <= 0) {
+            System.out.println("Por favor, insira um número inteiro positivo.");
+            return;
+        }
+
+        double soma = 0.0;
+
+        for (int i = 1; i <= quantidade; i++) {
+            System.out.print("Digite o valor " + i + ": ");
+            double valor = scanner.nextDouble();
+            soma += valor; 
+        }
+
+        double media = soma / quantidade;
+
+        System.out.printf("A média dos valores é: %.2f%n", media);
+
+        scanner.close();
+    }
+}
