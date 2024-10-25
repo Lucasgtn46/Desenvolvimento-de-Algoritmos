@@ -1,0 +1,23 @@
+package com.mycompany.numerosreaissoma;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.rodrigues
+ */
+public class NumerosReaisSoma {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double soma = 0.0; 
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Digite o " + i + " número real: ");
+            double numero = scanner.nextDouble(); 
+            soma += numero; 
+        }
+
+        System.out.printf("A soma dos números digitados é: %.2f%n", soma);
+
+        scanner.close(); 
+    }
+}
