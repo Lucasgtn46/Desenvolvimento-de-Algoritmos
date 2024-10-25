@@ -1,0 +1,40 @@
+package com.mycompany.notas_alunos;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Notas_Alunos {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        final int TOTAL_ALUNOS = 80; 
+        int alunosAprovados = 0; 
+        double somaNotas = 0.0; 
+        double nota; 
+
+        for (int i = 1; i <= TOTAL_ALUNOS; i++) {
+            System.out.print("Digite a nota do aluno " + i + " (0 a 10): ");
+            nota = scanner.nextDouble();
+            
+            while (nota < 0 || nota > 10) {
+                System.out.print("Nota inválida. Digite novamente (0 a 10): ");
+                nota = scanner.nextDouble();
+            }
+
+            somaNotas += nota;
+
+            if (nota >= 6.0) {
+                alunosAprovados++;
+            }
+        }
+
+        double mediaNotas = somaNotas / TOTAL_ALUNOS;
+
+        System.out.println("Quantidade de alunos aprovados: " + alunosAprovados);
+        System.out.printf("Média das notas da turma: %.2f%n", mediaNotas);
+
+        scanner.close();
+    }
+}
