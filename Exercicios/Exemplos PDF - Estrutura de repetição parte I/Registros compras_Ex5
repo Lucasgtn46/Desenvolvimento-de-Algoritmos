@@ -1,0 +1,32 @@
+package com.mycompany.compras;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Compras {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o CPF do cliente: ");
+        String cpf = scanner.nextLine();
+
+        double total = 0.0; 
+
+        while (true) {
+            System.out.print("Digite o preço do produto (ou 0 para finalizar): ");
+            double preco = scanner.nextDouble();
+
+            if (preco == 0) {
+                break; // Encerra o loop
+            }
+
+            total += preco;
+        }
+
+        System.out.printf("O valor total a ser pago pelo CPF %s é: R$ %.2f%n", cpf, total);
+
+        scanner.close(); 
+    }
+}
