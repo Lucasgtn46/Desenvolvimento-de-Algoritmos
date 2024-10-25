@@ -1,0 +1,25 @@
+package com.mycompany.tabuada_ex2;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Tabuada_Ex2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um número inteiro: ");
+        int numero = scanner.nextInt();
+
+        // Exibe o cabeçalho da tabela
+        System.out.println("i  | Saída");
+        
+        for (int i = 0; i <= 10; i++) {
+            int resultado = numero * i; // Calcula o resultado
+            System.out.printf("%d | %d%n", i, resultado); // Exibe o índice e o resultado
+        }
+
+        scanner.close();
+    }
+}
