@@ -1,0 +1,57 @@
+package com.mycompany.pesquisa_habitantes;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Pesquisa_Habitantes {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalHabitantes = 0; 
+        double somaIdade = 0.0; 
+        double somaSalarioHomens = 0.0; 
+        int contadorHomens = 0; 
+        int mulheresComSalarioBaixo = 0; 
+        
+        while (true) {
+            System.out.print("Digite a idade (negativa para encerrar): ");
+            int idade = scanner.nextInt();
+
+            if (idade < 0) {
+                break;
+            }
+
+            System.out.print("Digite o sexo (M/F): ");
+            char sexo = scanner.next().toUpperCase().charAt(0); // Lê o sexo e converte para maiúsculo
+
+            System.out.print("Digite o salário: ");
+            double salario = scanner.nextDouble();
+
+            somaIdade += idade;
+            totalHabitantes++;
+
+            if (sexo == 'M') {
+                somaSalarioHomens += salario;
+                contadorHomens++;
+            } else if (sexo == 'F') {
+                if (salario < 600.0) {
+                    mulheresComSalarioBaixo++;
+                }
+            } else {
+                System.out.println("Sexo inválido. Por favor, insira 'M' ou 'F'.");
+            }
+        }
+
+        double mediaIdade = (totalHabitantes > 0) ? somaIdade / totalHabitantes : 0;
+
+        double mediaSalarioHomens = (contadorHomens > 0) ? somaSalarioHomens / contadorHomens : 0;
+
+        System.out.printf("Média de idade do grupo: %.2f%n", mediaIdade);
+        System.out.printf("Média de salários dos homens: %.2f%n", mediaSalarioHomens);
+        System.out.println("Quantidade de mulheres com salário abaixo de R$600,00: " + mulheresComSalarioBaixo);
+
+        scanner.close();
+    }
+}
