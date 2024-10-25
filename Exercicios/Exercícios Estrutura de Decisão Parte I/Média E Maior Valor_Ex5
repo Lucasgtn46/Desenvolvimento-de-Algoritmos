@@ -1,0 +1,43 @@
+package com.mycompany.mediaemaiovalor;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class MediaEMaioValor {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double soma = 0.0;
+        double maior = Double.NEGATIVE_INFINITY; // Inicializa o maior com um valor muito pequeno
+        int contador = 0; // Contador para a quantidade de valores
+
+        System.out.println("Digite os valores (digite um valor negativo para finalizar):");
+
+        while (true) {
+            double valor = scanner.nextDouble();
+            
+            if (valor < 0) {
+                break;
+            }
+
+            soma += valor;
+            contador++;
+
+            if (valor > maior) {
+                maior = valor;
+            }
+        }
+
+        if (contador > 0) {
+            double media = soma / contador;
+            System.out.printf("A média dos valores é: %.2f%n", media);
+            System.out.println("O maior valor digitado é: " + maior);
+        } else {
+            System.out.println("Nenhum valor foi digitado.");
+        }
+
+        scanner.close();
+    }
+}
