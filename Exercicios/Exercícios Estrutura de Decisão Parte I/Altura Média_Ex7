@@ -1,0 +1,58 @@
+package com.mycompany.altura_media;
+import java.util.Scanner;
+/**
+ *
+ * @author Lucas S.Rodrigues
+ */
+public class Altura_Media {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int contadorMulheres = 0; 
+        int contadorHomens = 0; 
+        double somaAlturaMulheres = 0.0; 
+        double somaAlturaHomens = 0.0; 
+
+        System.out.println("Digite os dados das pessoas (digite 'F' para feminino, 'M' para masculino e '0' para encerrar):");
+
+        while (true) {
+            System.out.print("Sexo (F/M): ");
+            String sexo = scanner.next();
+
+            if (sexo.equals("0")) {
+                break;
+            }
+
+            System.out.print("Altura: ");
+            double altura = scanner.nextDouble();
+
+           
+            if (sexo.equalsIgnoreCase("F")) {
+                somaAlturaMulheres += altura;
+                contadorMulheres++;
+            } else if (sexo.equalsIgnoreCase("M")) {
+                somaAlturaHomens += altura;
+                contadorHomens++;
+            } else {
+                System.out.println("Sexo inválido. Por favor, digite 'F' ou 'M'.");
+            }
+        }
+
+        if (contadorMulheres > 0) {
+            double mediaMulheres = somaAlturaMulheres / contadorMulheres;
+            System.out.printf("A altura média das mulheres é: %.2f%n", mediaMulheres);
+        } else {
+            System.out.println("Nenhuma mulher foi registrada.");
+        }
+
+        if (contadorHomens > 0) {
+            double mediaHomens = somaAlturaHomens / contadorHomens;
+            System.out.printf("A altura média dos homens é: %.2f%n", mediaHomens);
+        } else {
+            System.out.println("Nenhum homem foi registrado.");
+        }
+
+        scanner.close();
+    }
+}
